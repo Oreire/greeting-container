@@ -1,0 +1,38 @@
+# Git & VCS
+.git/
+.github/
+.gitattributes
+
+# OS / Editor / IDE Junk
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml
+
+# Python Cache
+__pycache__/
+*.py[cod]
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Logs
+*.log
+
+# Environment Files (Secrets)
+.env
+.env.*
+!.env.example
+
+# Markdownlint (ignore generated output only)
+markdownlint-cli2-codequality.json
+
+# Temporary / Misc Files
+*.tmp
+*.bak
+*.swp
+*.swo
