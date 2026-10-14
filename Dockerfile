@@ -69,7 +69,7 @@ WORKDIR /app
 
 # Installations of only runtime dependencies
 
-RUN python -m pip install --no-cache-dir --upgrade "pip==23.3.1"
+RUN python -m pip install --no-cache-dir --upgrade "pip==26.2.1"
 
 COPY --from=builder /wheels /wheels
 RUN pip install --no-cache-dir /wheels/* \
