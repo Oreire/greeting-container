@@ -74,14 +74,14 @@ COPY --from=builder /wheels /wheels
 RUN pip install --no-cache-dir /wheels/* \
     && pip check
 
-# Copy application code from builder stage
-
-COPY --from=builder --chown=app:app /app/app ./app
-
 # Create non-root user
 
 RUN groupadd --system app \
     && useradd --system --gid app --no-create-home app
+
+# Copy application code from builder stage
+
+COPY --from=builder --chown=app:app /app/app ./app
 
 USER app
 
