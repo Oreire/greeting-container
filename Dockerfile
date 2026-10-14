@@ -130,7 +130,7 @@ COPY app/ ./app/
 ################################
 # Stage 2 — Runtime environment
 ################################
-FROM python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1
+FROM python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1 AS runtime
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
@@ -160,3 +160,4 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
 
 # Start Gunicorn
 CMD ["sh", "-c", "exec gunicorn --chdir app --bind 0.0.0.0:${PORT:-8080} --workers 2 app:app"]
+
